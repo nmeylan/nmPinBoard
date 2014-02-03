@@ -30,7 +30,6 @@
         msg: "Content can't be blank"
       },
       customization: function() {
-        console.log(this.get("customization").get("opacity"));
         if (this.get("customization").get("color").trim() === '') {
           return "Color can't be blank";
         }

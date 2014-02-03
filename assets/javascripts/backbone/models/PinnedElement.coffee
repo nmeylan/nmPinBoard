@@ -17,7 +17,6 @@ class nmPinBoard.PinnedElement extends Backbone.Model
       required: true
       msg : "Content can't be blank"
     customization : ->
-      console.log(@.get("customization").get("opacity"))
       if(@.get("customization").get("color").trim() == '')
         return "Color can't be blank"
       if(isNaN(@.get("customization").get("position").offsetX))
