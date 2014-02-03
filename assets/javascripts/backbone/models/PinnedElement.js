@@ -3,7 +3,7 @@
   var __hasProp = {}.hasOwnProperty,
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
-  window.PinnedElement = (function(_super) {
+  nmPinBoard.PinnedElement = (function(_super) {
     __extends(PinnedElement, _super);
 
     function PinnedElement() {
@@ -16,10 +16,43 @@
       content: "Content of your element",
       created_on: Date.now(),
       updated_on: Date.now(),
-      group_id: -1
+      group_id: -1,
+      customization: {}
+    };
+
+    PinnedElement.prototype.validation = {
+      title: {
+        required: true,
+        msg: "Title can't be blank"
+      },
+      content: {
+        required: true,
+        msg: "Content can't be blank"
+      },
+      customization: function() {
+        console.log(this.get("customization").get("opacity"));
+        if (this.get("customization").get("color").trim() === '') {
+          return "Color can't be blank";
+        }
+        if (isNaN(this.get("customization").get("position").offsetX)) {
+          return "X position errors : not a number (how is it possible?)";
+        }
+        if (isNaN(this.get("customization").get("position").offsetY)) {
+          return "Y position errors : not a number (how is it possible?)";
+        }
+        if (isNaN(this.get("customization").get("opacity"))) {
+          return "Opacity errors : not a number (how is it possible?)";
+        }
+        if (!isNaN(this.get("customization").get("opacity")) && (this.get("customization").get("opacity") > 1 || this.get("customization").get("opacity") < 0)) {
+          return "Opacity errors : value must be contains in 0..1 range";
+        }
+      }
     };
 
     PinnedElement.prototype.initialize = function() {
+      this.set({
+        "customization": new nmPinBoard.ElementCustomization()
+      });
       return console.log('Pinned element Constructor');
     };
 

@@ -1,23 +1,41 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>Jasmine Spec Runner v2.0.0</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Jasmine Spec Runner v2.0.0</title>
 
-  <link rel="shortcut icon" type="image/png" href="lib/jasmine-2.0.0/jasmine_favicon.png">
-  <link rel="stylesheet" type="text/css" href="lib/jasmine-2.0.0/jasmine.css">
+    <link rel="shortcut icon" type="image/png" href="lib/jasmine-2.0.0/jasmine_favicon.png">
+    <link rel="stylesheet" type="text/css" href="lib/jasmine-2.0.0/jasmine.css">
 
-  <script type="text/javascript" src="lib/jasmine-2.0.0/jasmine.js"></script>
-  <script type="text/javascript" src="lib/jasmine-2.0.0/jasmine-html.js"></script>
-  <script type="text/javascript" src="lib/jasmine-2.0.0/boot.js"></script>
+    <script type="text/javascript" src="lib/jasmine-2.0.0/jasmine.js"></script>
+    <script type="text/javascript" src="lib/jasmine-2.0.0/jasmine-html.js"></script>
+    <script type="text/javascript" src="lib/jasmine-2.0.0/boot.js"></script>
 
-  <!-- include source files here... -->
-  <script type="text/javascript" src="src/jasmineExamplePlayer.js"></script>
-  <script type="text/javascript" src="src/jasmineExampleSong.js"></script>
+    <script src="../assets/javascripts/libs/jQuery_1.11.0_min.js"></script>
+    <script src="../assets/javascripts/libs/underscore_1.5.0_min.js"></script>
+    <script src="../assets/javascripts/libs/backbone_1.1.0_min.js"></script>
+    <script src="../assets/javascripts/libs/backbone_validation.js"></script>
 
-  <!-- include spec files here... -->
-  <script type="text/javascript" src="spec/SpecHelper.js"></script>
-  <script type="text/javascript" src="spec/jasmine-example.js"></script>
+
+    <!-- include source files here... -->
+    <script type="text/javascript" src="../assets/javascripts/nmPinBoard.js"></script>
+    <!-- Backbone Models -->
+    <script type="text/javascript" src="../assets/javascripts/backbone/models/PinBoard.js"></script>
+    <script type="text/javascript" src="../assets/javascripts/backbone/models/ElementCustomization.js"></script>
+    <script type="text/javascript" src="../assets/javascripts/backbone/models/PinnedElement.js"></script>
+    <script type="text/javascript" src="../assets/javascripts/backbone/models/PinnedElements.js"></script>
+    <script type="text/javascript" src="../assets/javascripts/backbone/models/PinnedElementsGroup.js"></script>
+    <script type="text/javascript" src="../assets/javascripts/backbone/models/PinnedElementsGroups.js"></script>
+    <!-- Backbone Views -->
+    <script type="text/javascript" src="../assets/javascripts/backbone/views/PinBoardView.js"></script>
+    <script type="text/javascript" src="../assets/javascripts/backbone/views/PinnedElementView.js"></script>
+    <!-- include spec files here... -->
+    <script type="text/javascript" src="spec/SpecHelper.js"></script>
+    <script type="text/javascript" src="spec/PinBoardTest.js"></script>
+    <script type="text/javascript" src="spec/PinnedElementTest.js"></script>
+    <script type="text/javascript" src="spec/PinnedElementsTest.js"></script>
+    <script type="text/javascript" src="spec/PinnedElementsGroupTest.js"></script>
+    <script type="text/javascript" src="spec/PinnedElementsGroupsTest.js"></script>
 
 </head>
 

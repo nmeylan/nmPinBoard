@@ -3,7 +3,7 @@
   var __hasProp = {}.hasOwnProperty,
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
-  window.PinnedElementsGroup = (function(_super) {
+  nmPinBoard.PinnedElementsGroup = (function(_super) {
     __extends(PinnedElementsGroup, _super);
 
     function PinnedElementsGroup() {
@@ -15,7 +15,7 @@
       name: "Your pinned element group title",
       description: "A short description for your group",
       group_id: -1,
-      elements: new PinnedElements()
+      elements: new nmPinBoard.PinnedElements()
     };
 
     PinnedElementsGroup.prototype.initialize = function() {
