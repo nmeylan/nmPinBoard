@@ -16,7 +16,8 @@
       description: "A short description for your pin board",
       created_on: Date.now(),
       updated_on: Date.now(),
-      owner_id: -1
+      owner_id: -1,
+      elements: {}
     };
 
     PinBoard.prototype.validation = {
@@ -31,7 +32,7 @@
     };
 
     PinBoard.prototype.initialize = function() {
-      return console.log('Pin board Constructor');
+      return this.elements = new nmPinBoard.PinnedElements();
     };
 
     return PinBoard;

@@ -6,8 +6,8 @@ class nmPinBoard.PinnedElement extends Backbone.Model
     content : "Content of your element"
     created_on : Date.now()
     updated_on : Date.now()
-    group_id : -1
     customization : {}
+    board_id : {}
 
   validation :
     title :
@@ -30,4 +30,4 @@ class nmPinBoard.PinnedElement extends Backbone.Model
 
   initialize : ->
     @.set("customization" : new nmPinBoard.ElementCustomization())
-    console.log('Pinned element Constructor')
+    @.urlRoot  = "PinnedElement/"

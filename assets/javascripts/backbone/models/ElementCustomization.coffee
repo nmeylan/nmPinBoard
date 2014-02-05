@@ -1,6 +1,7 @@
 class nmPinBoard.ElementCustomization extends Backbone.Model
 
   defaults :
+    id : -1
     color : "blue"
     position :
       offsetX : 50
@@ -8,4 +9,3 @@ class nmPinBoard.ElementCustomization extends Backbone.Model
     opacity : 1
 
   initialize : ->
-    console.log("Customization constructor")

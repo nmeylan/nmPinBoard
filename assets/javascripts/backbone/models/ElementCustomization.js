@@ -11,6 +11,7 @@
     }
 
     ElementCustomization.prototype.defaults = {
+      id: -1,
       color: "blue",
       position: {
         offsetX: 50,
@@ -19,9 +20,7 @@
       opacity: 1
     };
 
-    ElementCustomization.prototype.initialize = function() {
-      return console.log("Customization constructor");
-    };
+    ElementCustomization.prototype.initialize = function() {};
 
     return ElementCustomization;
 

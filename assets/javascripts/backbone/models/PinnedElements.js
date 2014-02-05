@@ -12,9 +12,9 @@
 
     PinnedElements.prototype.model = nmPinBoard.PinnedElement;
 
-    PinnedElements.prototype.initialize = function() {
-      return console.log("Pinned elements collection constructor");
-    };
+    PinnedElements.prototype.localStorage = new Backbone.LocalStorage("PinnedElements");
+
+    PinnedElements.prototype.initialize = function() {};
 
     return PinnedElements;
 

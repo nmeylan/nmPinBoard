@@ -6,6 +6,7 @@ class nmPinBoard.PinBoard extends Backbone.Model
     created_on : Date.now()
     updated_on : Date.now()
     owner_id : -1
+    elements : {}
 
   validation :
     title :
@@ -16,4 +17,4 @@ class nmPinBoard.PinBoard extends Backbone.Model
       msg : "Description can't be blank"
 
   initialize : ->
-    console.log('Pin board Constructor')
+    @.elements = new nmPinBoard.PinnedElements()

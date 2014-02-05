@@ -2,17 +2,32 @@
 <html>
 <head>
     <title>nmPinBoard</title>
-    <script src="assets/javascripts/libs/underscore_1.5.0_min.js"></script>
-    <script src="assets/javascripts/libs/backbone_1.1.0_min.js"></script>
-    <script src="assets/javascripts/libs/jQuery_1.11.0_min.js"></script>
+    <script type="text/javascript" src="assets/javascripts/libs/underscore_1.5.0_min.js"></script>
+    <script type="text/javascript" src="assets/javascripts/libs/backbone_1.1.0_min.js"></script>
+    <script type="text/javascript" src="assets/javascripts/libs/jQuery_1.11.0_min.js"></script>
+    <script type="text/javascript" src="assets/javascripts/libs/backbone_validation.js"></script>
+    <script type="text/javascript" src="assets/javascripts/libs/backbone_local_storage.js"></script>
     <!-- Backbone Models -->
-    <script src="assets/javascripts/models/PinBoard.js"></script>
-    <script src="assets/javascripts/models/PinnedElement.js"></script>
-    <script src="assets/javascripts/models/PinnedElements.js"></script>
-    <script src="assets/javascripts/models/PinnedElementsGroup.js"></script>
-    <script src="assets/javascripts/models/PinnedElementsGroups.js"></script>
+    <script type="text/javascript" src="assets/javascripts/nmPinBoard.js"></script>
+    <script type="text/javascript" src="assets/javascripts/backbone/models/PinBoard.js"></script>
+    <script type="text/javascript" src="assets/javascripts/backbone/models/PinnedElement.js"></script>
+    <script type="text/javascript" src="assets/javascripts/backbone/models/PinnedElements.js"></script>
+    <script type="text/javascript" src="assets/javascripts/backbone/models/ElementCustomization.js"></script>
+    <!-- Style -->
+    <link rel="stylesheet" type="text/css" href="assets/stylesheets/nmPinboard.css">
 </head>
 <body>
+    <div id="pinboard">
+        <div id="pinboard-header">
+            <div class="splitcontentleft">
+                <a href="#edit-title" class="icon icon-edit" title="Edit title"></a>
+                <a href="#remove-all-elements" class="icon icon-delete" title="Remove all elements"></a>
+            </div>
+            <div class="splitcontentright">
+                <a href="#add-element" class="icon icon-add" title="Add an element"></a>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>

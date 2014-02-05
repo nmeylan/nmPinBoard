@@ -16,8 +16,8 @@
       content: "Content of your element",
       created_on: Date.now(),
       updated_on: Date.now(),
-      group_id: -1,
-      customization: {}
+      customization: {},
+      board_id: {}
     };
 
     PinnedElement.prototype.validation = {
@@ -52,7 +52,7 @@
       this.set({
         "customization": new nmPinBoard.ElementCustomization()
       });
-      return console.log('Pinned element Constructor');
+      return this.urlRoot = "PinnedElement/";
     };
 
     return PinnedElement;

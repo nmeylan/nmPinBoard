@@ -1,0 +1,42 @@
+#pinboard{
+    width : 80%;
+    height: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    border: solid 1px #EEE;
+}
+
+#pinboard-header{
+    overflow: hidden;
+    padding: 5px 10px;
+    font-size: 12px;
+    text-align: left;
+    color: #555;
+    text-shadow: 0 1px 0 #fff;
+    border-bottom: 1px solid #d8d8d8;
+    background-color: #eaeaea;
+    background-image: -moz-linear-gradient(#fafafa, #eaeaea);
+    background-image: -webkit-linear-gradient(#fafafa, #eaeaea);
+    background-image: linear-gradient(#fafafa, #eaeaea);
+    background-repeat: repeat-x;
+}
+
+.icon{
+    background-position: 0% 50%;
+    background-repeat: no-repeat;
+    padding-left: 16px;
+    padding-bottom: 3px;
+}
+
+.splitcontentright{
+    float:right;
+    width:49%;
+}
+.splitcontentleft{
+    float:left;
+    width:49%;
+}
+
+.icon-add{ background: url("../images/add.png")}
+.icon-edit{ background: url("../images/edit.png")}
+.icon-delete{ background: url("../images/delete.png")}
