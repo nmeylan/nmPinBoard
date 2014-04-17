@@ -17,6 +17,10 @@
         offsetX: 50,
         offsetY: 50
       },
+      size: {
+        width: "80px",
+        height: "50px"
+      },
       opacity: 1
     };
 
@@ -27,3 +31,5 @@
   })(Backbone.Model);
 
 }).call(this);
+
+//# sourceMappingURL=ElementCustomization.map

@@ -2,9 +2,9 @@
 <html>
 <head>
     <title>nmPinBoard</title>
+    <script type="text/javascript" src="assets/javascripts/libs/jQuery_1.11.0_min.js"></script>
     <script type="text/javascript" src="assets/javascripts/libs/underscore_1.5.0_min.js"></script>
     <script type="text/javascript" src="assets/javascripts/libs/backbone_1.1.0_min.js"></script>
-    <script type="text/javascript" src="assets/javascripts/libs/jQuery_1.11.0_min.js"></script>
     <script type="text/javascript" src="assets/javascripts/libs/backbone_validation.js"></script>
     <script type="text/javascript" src="assets/javascripts/libs/backbone_local_storage.js"></script>
     <!-- Backbone Models -->
@@ -13,21 +13,55 @@
     <script type="text/javascript" src="assets/javascripts/backbone/models/PinnedElement.js"></script>
     <script type="text/javascript" src="assets/javascripts/backbone/models/PinnedElements.js"></script>
     <script type="text/javascript" src="assets/javascripts/backbone/models/ElementCustomization.js"></script>
+    <!-- Backbone Views -->
+    <script type="text/javascript" src="assets/javascripts/backbone/views/PinBoardView.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var p = new nmPinBoard.PinBoardView({model: new nmPinBoard.PinBoard()});
+        });
+
+    </script>
+
+    <script type="text/javascript" src="assets/javascripts/bootstrap.min.js"></script>
     <!-- Style -->
+    <link rel="stylesheet" href="assets/stylesheets/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="assets/stylesheets/nmPinboard.css">
 </head>
 <body>
-    <div id="pinboard">
-        <div id="pinboard-header">
-            <div class="splitcontentleft">
-                <a href="#edit-title" class="icon icon-edit" title="Edit title"></a>
-                <a href="#remove-all-elements" class="icon icon-delete" title="Remove all elements"></a>
-            </div>
-            <div class="splitcontentright">
-                <a href="#add-element" class="icon icon-add" title="Add an element"></a>
-            </div>
+<div class="page-header">
+    <h1>NM Pin Board
+        <small></small>
+    </h1>
+</div>
+<!-- START OF PIN BOARD CODE HERE-->
+<div id="wrapper">
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand">
+                <h3>Pin Board Menu</h3>
+            </li>
+            <li>
+                <a href="#add-element" title="Add an element" id="add_element"><span class="glyphicon glyphicon-plus"></span>Add element</a>
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="panel panel-default" id="pinboard">
+        <div class="panel-heading" id="pinboard_header"></div>
+        <div class="panel-body">
+            Panel content
         </div>
     </div>
+</div>
+<!-- END OF PIN BOARD-->
+<!-- START TEMPLATES HERE -->
+<script type="text/template" id="pinboard_header_template">
+    <h4 class="inline" id="pinboard_title" title="Edit title"><%= title %></h4>
+    <p class="description" id="pinboard_description" title="Edit description"><%= description %> </p>
+</script>
+<!-- END TEMPLATES -->
 
 </body>
 </html>

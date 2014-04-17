@@ -2,4 +2,27 @@
 (function() {
   window.nmPinBoard = {};
 
+  $.fn.single_double_click = function(single_click_callback, double_click_callback, timeout) {
+    return this.each()(function() {
+      var clicks, self;
+      clicks = 0;
+      self = this;
+      return $(this).click(event)(function() {
+        clicks += 1;
+        if (clicks === 1) {
+          return setTimeout((function() {
+            if (clicks === 1) {
+              single_click_callback.call(self, event);
+            } else {
+              double_click_callback.call(self, event);
+            }
+            return clicks = 0;
+          }), timeout || 300);
+        }
+      });
+    });
+  };
+
 }).call(this);
+
+//# sourceMappingURL=nmPinBoard.map
