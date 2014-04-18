@@ -7,6 +7,8 @@
     <script type="text/javascript" src="assets/javascripts/libs/backbone_1.1.0_min.js"></script>
     <script type="text/javascript" src="assets/javascripts/libs/backbone_validation.js"></script>
     <script type="text/javascript" src="assets/javascripts/libs/backbone_local_storage.js"></script>
+    <script type="text/javascript" src="assets/javascripts/libs/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/javascripts/libs/jquery-ui-1.10.4.custom.min.js"></script>
     <!-- Backbone Models -->
     <script type="text/javascript" src="assets/javascripts/nmPinBoard.js"></script>
     <script type="text/javascript" src="assets/javascripts/backbone/models/PinBoard.js"></script>
@@ -15,6 +17,7 @@
     <script type="text/javascript" src="assets/javascripts/backbone/models/ElementCustomization.js"></script>
     <!-- Backbone Views -->
     <script type="text/javascript" src="assets/javascripts/backbone/views/PinBoardView.js"></script>
+    <script type="text/javascript" src="assets/javascripts/backbone/views/PinnedElementView.js"></script>
 
     <script type="text/javascript">
         $(document).ready(function () {
@@ -23,7 +26,7 @@
 
     </script>
 
-    <script type="text/javascript" src="assets/javascripts/bootstrap.min.js"></script>
+
     <!-- Style -->
     <link rel="stylesheet" href="assets/stylesheets/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="assets/stylesheets/nmPinboard.css">
@@ -37,21 +40,21 @@
 <!-- START OF PIN BOARD CODE HERE-->
 <div id="wrapper">
     <div id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-            <li class="sidebar-brand">
-                <h3>Pin Board Menu</h3>
-            </li>
-            <li>
-                <a href="#add-element" title="Add an element" id="add_element"><span class="glyphicon glyphicon-plus"></span>Add element</a>
-            </li>
+        <div>
+            <ul class="sidebar-nav">
+                <li>
+                    <a href="#add-element" title="Add an element" id="add_element" ><span class="glyphicon glyphicon-plus"></span>Add element</a>
+                </li>
+            </ul>
+        </div>
+        <div id="trash">
 
-        </ul>
+        </div>
     </div>
 
     <div class="panel panel-default" id="pinboard">
         <div class="panel-heading" id="pinboard_header"></div>
-        <div class="panel-body">
-            Panel content
+        <div class="panel-body" id="pinboard_body">
         </div>
     </div>
 </div>
@@ -60,6 +63,15 @@
 <script type="text/template" id="pinboard_header_template">
     <h4 class="inline" id="pinboard_title" title="Edit title"><%= title %></h4>
     <p class="description" id="pinboard_description" title="Edit description"><%= description %> </p>
+</script>
+<script type="text/template" id="pinboard_body_template">
+
+</script>
+<script type="text/template" id="pinboard_element_template">
+    <div class="pinboard_element draggable">
+        <%= title %>
+        <%= content %>
+    </div>
 </script>
 <!-- END TEMPLATES -->
 

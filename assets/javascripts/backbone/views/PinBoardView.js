@@ -11,7 +11,7 @@
         return PinBoardView.__super__.constructor.apply(this, arguments);
       }
 
-      PinBoardView.prototype.el = $('#pinboard');
+      PinBoardView.prototype.el = $('body');
 
       PinBoardView.prototype.elTitleId = '#pinboard_title';
 
@@ -22,6 +22,8 @@
       PinBoardView.prototype.elEditDescriptionId = "#edit_pinboard_description";
 
       PinBoardView.prototype.elAddId = '#add_element';
+
+      PinBoardView.prototype.pinnedElementViews = [];
 
       PinBoardView.prototype.initialize = function() {
         Backbone.Validation.bind(this);
@@ -54,7 +56,14 @@
         'blur #pinboard_description': 'doUpdateDescription'
       };
 
-      PinBoardView.prototype.doAddElement = function() {};
+      PinBoardView.prototype.doAddElement = function() {
+        var view;
+        view = new nmPinBoard.PinnedElementView({
+          model: new nmPinBoard.PinnedElement()
+        });
+        this.pinnedElementViews.push(view);
+        return this.model.elements.push(view.model);
+      };
 
       PinBoardView.prototype.doEditTitle = function() {
         return this.doEdit(this.elTitleId, this.elEditTitleId);
@@ -76,7 +85,7 @@
         var element, input;
         element = $(elementId);
         if (!element.hasClass("editing")) {
-          element.html("<input type='textfield' id='" + elementInputId + "' name='pinboard_Description' value='" + element.text() + "' class='edit_header'/>");
+          element.html("<input type='textfield' id='" + elementInputId + "' value='" + element.text() + "' class='edit_header'/>");
           input = element.children()[0];
           input.selectionStart = input.selectionEnd = input.value.length;
           return element.addClass('editing');

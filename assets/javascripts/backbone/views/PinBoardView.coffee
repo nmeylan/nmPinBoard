@@ -1,11 +1,12 @@
 jQuery ->
   class nmPinBoard.PinBoardView extends Backbone.View
-    el: $ '#pinboard'
+    el: $ 'body'
     elTitleId : '#pinboard_title'
     elEditTitleId : "#edit_pinboard_title"
     elDescriptionId : '#pinboard_description'
     elEditDescriptionId : "#edit_pinboard_description"
     elAddId : '#add_element'
+    pinnedElementViews : []
 
     initialize : ->
       Backbone.Validation.bind(@)
@@ -32,6 +33,9 @@ jQuery ->
 
 
     doAddElement : ->
+      view = new nmPinBoard.PinnedElementView({model : new nmPinBoard.PinnedElement()})
+      @pinnedElementViews.push view
+      @model.elements.push view.model
 
     doEditTitle : ->
       @doEdit(@elTitleId, @elEditTitleId)
@@ -48,7 +52,7 @@ jQuery ->
     doEdit : (elementId, elementInputId)->
       element = $(elementId)
       unless element.hasClass("editing")
-        element.html("<input type='textfield' id='"+elementInputId+"' name='pinboard_Description' value='"+element.text()+"' class='edit_header'/>")
+        element.html("<input type='textfield' id='"+elementInputId+"' value='"+element.text()+"' class='edit_header'/>")
         input = element.children()[0]
         input.selectionStart = input.selectionEnd = input.value.length;
         element.addClass('editing')
