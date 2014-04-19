@@ -35,8 +35,14 @@
       return this.elements = new nmPinBoard.PinnedElements();
     };
 
+    PinBoard.prototype.validate = function() {
+      return PinBoard.__super__.validate.call(this);
+    };
+
     return PinBoard;
 
   })(Backbone.Model);
 
 }).call(this);
+
+//# sourceMappingURL=PinBoard.map

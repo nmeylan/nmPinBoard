@@ -15,6 +15,7 @@ jQuery ->
       Backbone.Validation.unbind(@)
     render : ->
       @renderHeader()
+      @renderBody()
 
     renderHeader : ->
       variables = {
@@ -23,6 +24,9 @@ jQuery ->
       }
       template = _.template( $('#pinboard_header_template').html(), variables )
       $('#pinboard_header').html(template)
+
+    renderBody : ->
+      $("#pinboard_body").selectable()
 
     events :
       'click #add_element' : 'doAddElement'

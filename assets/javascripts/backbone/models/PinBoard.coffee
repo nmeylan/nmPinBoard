@@ -18,3 +18,6 @@ class nmPinBoard.PinBoard extends Backbone.Model
 
   initialize : ->
     @.elements = new nmPinBoard.PinnedElements()
+
+  validate : ->
+    super()

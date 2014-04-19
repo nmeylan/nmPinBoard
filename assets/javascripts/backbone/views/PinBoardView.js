@@ -35,7 +35,8 @@
       };
 
       PinBoardView.prototype.render = function() {
-        return this.renderHeader();
+        this.renderHeader();
+        return this.renderBody();
       };
 
       PinBoardView.prototype.renderHeader = function() {
@@ -46,6 +47,10 @@
         };
         template = _.template($('#pinboard_header_template').html(), variables);
         return $('#pinboard_header').html(template);
+      };
+
+      PinBoardView.prototype.renderBody = function() {
+        return $("#pinboard_body").selectable();
       };
 
       PinBoardView.prototype.events = {

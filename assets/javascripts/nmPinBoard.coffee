@@ -13,3 +13,9 @@ $.fn.single_double_click = (single_click_callback, double_click_callback, timeou
           else
             double_click_callback.call(self, event)
           clicks = 0 ), timeout || 300
+
+S4 = ->
+  (((1+Math.random())*0x10000)|0).toString(16).substring(1)
+
+nmPinBoard.guid = ->
+  (S4()+S4()+"-"+S4()+"-"+S4()+"-"+S4()+"-"+S4()+S4()+S4())

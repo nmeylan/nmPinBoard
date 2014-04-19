@@ -35,10 +35,9 @@
 }
 
 .pinboard_element{
-    height : 100px;
-    width : 100px;
+    height : 150px;
+    width : 200px;
     border : solid 1px #EEE;
-    position : absolute;
 }
 
 
@@ -67,6 +66,9 @@
 .icon-edit{ background: url("../images/edit.png")}
 .icon-delete{ background: url("../images/delete.png")}
 
+/**
+    SIDEBAR
+*/
 #wrapper {
     padding-left: 200px;
     padding-right: 40px;
@@ -84,7 +86,7 @@
     position: fixed;
     height: 100%;
     overflow-y: auto;
-    z-index: 1000;
+    z-index: 998;
     transition: all 0.4s ease 0s;
 }
 
@@ -185,3 +187,9 @@
     display: inline-block;
 }
 
+/**
+    JQUERY UI THEME
+*/
+.ui-selected{
+    background-color: red;
+}

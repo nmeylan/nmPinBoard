@@ -21,16 +21,42 @@
       };
 
       PinnedElementView.prototype.render = function() {
-        var template, variables;
+        var self, template, variables;
+        self = this;
         variables = {
+          guid: nmPinBoard.guid(),
           title: this.model.attributes.title,
           content: this.model.attributes.content
         };
         template = _.template($('#pinboard_element_template').html(), variables);
         $('#pinboard_body').append(template);
-        return $(".draggable").draggable({
+        return $(".pinboard_element").resizable({
+          minHeight: 150,
+          minWidth: 200
+        }).draggable({
           snap: true,
-          stack: ".draggable"
+          stack: ".draggable",
+          drag: function(event, ui) {
+            return self.dragHandler(event, ui);
+          }
+        });
+      };
+
+      PinnedElementView.prototype.stopDragHandler = function(event, ui) {};
+
+      PinnedElementView.prototype.dragHandler = function(event, ui) {
+        var left, top;
+        top = ui.position.top;
+        left = ui.position.left;
+        return $.each($(".pinboard_element.ui-selected"), function(index, value) {
+          var element;
+          element = $(this);
+          if (!(element.attr('id') === ui.helper.attr('id'))) {
+            element.position({
+              'top': top,
+              'left': left
+            });
+          }
         });
       };
 

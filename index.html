@@ -29,6 +29,7 @@
 
     <!-- Style -->
     <link rel="stylesheet" href="assets/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/stylesheets/jquery-ui-1.10.4.custom.min.css">
     <link rel="stylesheet" type="text/css" href="assets/stylesheets/nmPinboard.css">
 </head>
 <body>
@@ -68,8 +69,8 @@
 
 </script>
 <script type="text/template" id="pinboard_element_template">
-    <div class="pinboard_element draggable">
-        <%= title %>
+    <div class="pinboard_element" id="<%=guid%>">
+        <%= title %> <%=guid%>
         <%= content %>
     </div>
 </script>
